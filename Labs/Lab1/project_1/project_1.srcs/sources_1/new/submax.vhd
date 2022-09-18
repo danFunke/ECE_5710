@@ -1,4 +1,4 @@
--- Lab 1: Conditional Subtractor
+-- Lab 1: Conditional Subtractor, Part 1
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 
