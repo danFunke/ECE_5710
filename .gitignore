@@ -113,6 +113,10 @@ xvlog.*
 *.hw
 *.backup.*
 *.debug
+*.wcfg
 
 ## checkpoint files
 *.dcp
+
+# Delivery files
+*.zip
