@@ -16,7 +16,7 @@ begin
     process (a, b)
     begin
         lt <= '0';
-        if (x < y) then
+        if (a < b) then
             lt <= '1';
         end if;
     end process;

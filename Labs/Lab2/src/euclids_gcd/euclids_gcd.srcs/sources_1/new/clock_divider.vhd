@@ -7,8 +7,7 @@ entity clock_divider is
     port (
             mclk    : in STD_LOGIC;     -- 50 MHz Clock
             clr     : in STD_LOGIC;
-            clk190  : out STD_LOGIC;
-            clk48   : out STD_LOGIC
+            clk190  : out STD_LOGIC
         );
 end clock_divider;
 
@@ -25,6 +24,5 @@ begin
     end process;
 
     clk190  <= q(17);
-    clk48   <= q(19);
 
 end Behavior;
