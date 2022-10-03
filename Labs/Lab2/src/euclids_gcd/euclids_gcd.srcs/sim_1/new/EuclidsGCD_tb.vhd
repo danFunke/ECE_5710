@@ -46,7 +46,7 @@ begin
    test : process
         begin
             clr_tb <= '1';
-            x_tb <= X"15";
+            x_tb <= X"0F";
             y_tb <= X"06";
             wait for 1 ns;
             clr_tb <= '0';
