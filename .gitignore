@@ -120,3 +120,6 @@ xvlog.*
 
 # Delivery files
 *.zip
+Labs/Lab5/vga_controller/project_1/project_1.gen/
+Labs/Lab5/vga_controller/project_1/project_1.ip_user_files/
+*.jpg
