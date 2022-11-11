@@ -1,0 +1,24 @@
+\ Unsigned multiplication
+: UM* ( u1 u2 - upL upH )
+  0
+  mpp mpp mpp mpp
+  mpp mpp mpp mpp
+  mpp mpp mpp mpp
+  mpp mpp mpp mpp
+  ROT_DROP
+;
+
+: main ( -- )
+  BEGIN
+    waitB0 S@   \ get u1
+    DUP DIG!
+    waitB0 S@   \ get u2
+    DUP DIG!
+    waitB0 UM*  \ multiply
+    DIG!        \ display upH
+    waitB0 DIG! \ display upL
+  AGAIN
+;
+
+
+

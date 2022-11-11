@@ -1,0 +1,31 @@
+\ MIN MAX
+
+: MIN ( n1 n2 -- min )
+  OVER OVER >
+  IF
+    SWAP
+  THEN
+  DROP
+;
+
+: MAX ( n1 n2 -- max )
+  OVER OVER <
+  IF
+    NIP
+  ELSE
+    DROP
+  THEN
+;
+
+: main ( -- )
+  BEGIN
+    waitB0
+    S@ DUP DIG!
+    waitB0
+    S@ DUP DIG!
+    waitB0
+    OVER OVER MIN DIG!
+    waitB0
+    MAX DIG!
+  AGAIN
+;

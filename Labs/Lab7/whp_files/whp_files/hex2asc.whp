@@ -1,0 +1,21 @@
+\ Convert hex to ASCII
+HEX
+
+: hex2asc ( n -- asc )
+  0F AND  \ Mask upper nibble
+  DUP 9 > \ if n > 9
+  IF
+    37 +  \ add $37
+  ELSE
+    30 +  \ else add $30
+  THEN
+;
+
+: main ( -- )
+  BEGIN
+    waitB0
+    S@ DUP DIG!
+    waitB0
+    hex2asc DIG!
+  AGAIN
+;

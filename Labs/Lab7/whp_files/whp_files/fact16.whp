@@ -1,0 +1,36 @@
+\ Example of BEGIN...WHILE...REPEAT
+
+: UM* ( u1 u2 - upL upH )
+  0
+  mpp mpp mpp mpp
+  mpp mpp mpp mpp
+  mpp mpp mpp mpp
+  mpp mpp mpp mpp
+  ROT_DROP
+;
+
+: * ( n1 n2 -- n3 )
+  UM* DROP
+;
+
+: factorial ( n -- n! )
+  1 2 ROT         ( x i n )
+  BEGIN           ( x i n )
+    OVER OVER <=  ( x i n f )
+  WHILE           ( x i n )
+    -ROT TUCK     ( n i x i )
+    * SWAP        ( n x' i )
+    1+ ROT        ( x' i' n )
+  REPEAT          ( x i n )
+  DROP DROP       ( x )
+;
+
+: main ( -- )
+  BEGIN
+    waitB0
+    S@ DUP DIG!
+    waitB0
+    factorial DIG!
+  AGAIN
+;
+

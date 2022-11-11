@@ -1,0 +1,27 @@
+\ Unsigned division
+: UM/MOD ( unL unH ud -- ur uq )
+  -ROT
+  shldc shldc shldc shldc
+  shldc shldc shldc shldc
+  shldc shldc shldc shldc
+  shldc shldc shldc shldc 
+  ROT_DROP_SWAP
+;
+
+: main ( -- )
+  BEGIN
+    waitB0 S@     \ get unH
+    DUP DIG!
+    waitB0 S@     \ get unL
+    DUP DIG!
+    SWAP          \ numerator
+    waitB0 S@     \ get ud
+    DUP DIG!      \ denominator
+    waitB0 UM/MOD \ divide
+    DIG!          \ display uq
+    waitB0 DIG!   \ display ur
+  AGAIN
+;
+
+
+

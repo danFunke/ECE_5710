@@ -1,0 +1,46 @@
+\ Leap year
+
+: UM/MOD ( unumL unumH udenom - urem uquot )
+  -ROT
+  16 FOR
+    shldc
+  NEXT
+  ROT_DROP_SWAP
+;
+
+: U/MOD ( n1 n2 -- urem uquot )
+  >R 0 R>
+  UM/MOD
+;
+
+: MOD ( n1 n2 -- urem )
+  U/MOD DROP
+;
+
+: ?leap ( year -- flag )
+  DUP 400 MOD 0=
+  IF
+     DROP TRUE
+  ELSE
+     DUP 100 MOD 0=
+     IF
+        DROP FALSE
+     ELSE
+        4 MOD 0=
+        IF
+           TRUE
+        ELSE
+           FALSE
+        THEN
+     THEN
+  THEN
+;
+
+: main ( -- )
+  BEGIN
+    waitB0
+    S@ DUP DIG!
+    waitB0
+    ?leap DIG!
+  AGAIN
+;

@@ -1,0 +1,8 @@
+\ Test of JB0HI, JB0LO, S@ and DIG!
+: main ( -- )
+  BEGIN
+    waitB0
+    S@
+    DIG!
+  AGAIN
+;

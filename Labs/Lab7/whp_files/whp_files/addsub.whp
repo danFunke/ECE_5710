@@ -1,0 +1,21 @@
+\ Calculate a = z and w = (x + y) and (x - y)
+: main ( -- )
+  BEGIN
+    waitB0 S@  ( x )        \ Get x from switches
+    DUP DIG!   ( x )        \ Display x on 7-Seg
+
+    waitB0 S@  ( x y )      \ Get y from switches
+    DUP DIG!   ( x y )      \ Display y on 7-Seg
+
+    OVER OVER  ( x y x y )  \ Duplicate both x and y
+    waitB0 +   ( x y z )    \ Calculate z = x + y
+    DUP DIG!   ( x y z )    \ Display z on 7-Seg
+
+    -ROT       ( z x y )    \ Save sum
+    waitB0 -   ( z w )      \ Calculate w = x - y
+    DUP DIG!   ( z w )      \ Display w on 7-Seg
+
+    waitB0 AND ( a )        \ Calculate a = z and w
+    DIG!       ( a )        \ Display a on 7-Seg
+  AGAIN
+;
