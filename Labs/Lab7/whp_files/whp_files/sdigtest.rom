@@ -1,0 +1,14 @@
+type rom_array is array (NATURAL range <>)  of STD_LOGIC_VECTOR (15 downto 0);
+constant rom: rom_array := (
+	JMP, 		--0
+	X"0002", 		--1
+	JB0HI, 		--2
+	X"0002", 		--3
+	JB0LO, 		--4
+	X"0004", 		--5
+	sfetch, 		--6
+	digstore, 		--7
+	JMP, 		--8
+	X"0002", 		--9
+	X"0000" 		--a
+	);
